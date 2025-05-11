@@ -1,0 +1,1 @@
+`angelix src test.c oracle 1 2 3 4 5 6 --assert assert.json --defect guards --synthesis-level conditional arithmetic --synthesis-ptr-vars --syntehsis-func-params`
