@@ -3,7 +3,7 @@
 https://s3-ap-southeast-1.amazonaws.com/angelix/angelix-icse16-v2.vdi
 You will find each of the 
 
-##Setup##
+## Setup ##
 I had several issues with trying to compile Angelix after building from source. So, using a virtual machine worked best for me as it has Angelix pre-installed (albeit with an outdated distribution).
 
 1. Download the .vdi file from https://s3-ap-southeast-1.amazonaws.com/angelix/angelix-icse16-v2.vdi
@@ -11,4 +11,4 @@ I had several issues with trying to compile Angelix after building from source. 
 3. Install virt-manager if you haven't already: `sudo apt-get install virt-manager`
 4. Run it...load it in... and so on
 
-##TBE##
+## TBE ##
