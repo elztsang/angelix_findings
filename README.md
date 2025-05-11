@@ -1,7 +1,6 @@
 # Angelix Findings
-[https://github.com/msv-lab/angelix](angelix)
-https://s3-ap-southeast-1.amazonaws.com/angelix/angelix-icse16-v2.vdi
-You will find each of the 
+These are my experiments and findings using the [https://github.com/msv-lab/angelix](angelix) software.
+You will find each of the experiments with their own README files detailing what they do and what I learned.
 
 ## Setup ##
 I had several issues with trying to compile Angelix after building from source. So, using a virtual machine worked best for me as it has Angelix pre-installed (albeit with an outdated distribution).
