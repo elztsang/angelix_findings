@@ -12,8 +12,10 @@ I had several issues with trying to compile Angelix after building from source. 
 5. Run the Virtual Machine Manager application. You can import the `.qcow2` file into the KVM by following the steps [here](https://markontech.com/posts/convert-virtualbox-vms-to-qemu-kvm/#import-the-qcow2-into-the-kvm-vm).
 6. Log into user `angelix` with password `angelix`.
 
+## Things to Know ##
 The contents of this repository are only the test cases I made. I also had trouble transferring files from QEMU/KVM to my host machine...so I had to handtype the files. You will need your own Angelix software to run these test cases.
 Make sure to build the experiment `test.c` executable with `make all` in `/src` before changing out of the directory, and then running the command specified in the README.md for the experiment.
+The `oracle` files are the test cases, and the `assert.json` files tell angelix which of the test cases are failing for the initial program.
 
 ## Purpose ##
 These experiments were to learn how angelix repair works. The ultimate goal is to see if we can eventually apply angelix's repair methodology to eBPF code. The hypothetical, high-level workflow is shown below.
