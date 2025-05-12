@@ -1,4 +1,9 @@
+# memory-param
+To run this repair, execute this command in `tests\memory-param`:
+
 `angelix src test.c oracle 1 2 3 4 5 6 7 8 --assert assert.json --defect if-conditions --synthesis-level mixed-conditional`
+
+After the trying the memory-oob experiment, I wanted to get angelix to infer the size of the array as bounds. This meant I had to do something meaningful with the array size instead of leaving it static, and I decided to make it a variable length.
 
 This experiment made me realize, again, the importance of choosing test cases and their effects on repair. While seemingly a simple repair, it took a lot of trial and error to get the program to understand the intended behavior of the program, which we need to provide with test cases.
 
@@ -11,9 +16,8 @@ I only used one test case that was "passing AND success" (as in, it was within t
 
 FOr example, test case 1 creates an array of size 7 and accesses index 2. This passes the original program since 2 is non-negative, but it also follows the intended behavior of accessing an index within specified bounds (size = 7).
 
-Since I had no other test case satisfying these constraints, the repair program did what it was supposed to, with the information provided: "When x == 2, this test case passes." What ended up happening was the repair used 2 as it's repair case. (link to the file?)
-(insert image here)
-
+Since I had no other test case satisfying these constraints, the repair program did what it was supposed to, with the information provided: "When x == 2, this test case passes." What ended up happening was the repair used 2 as it's repair case.
 Therefore, I had to create another "in-bounds" test case (#6) to have angelix infer the relationship between the array size and the index.
+You can see this at the `constant_example.png` located in this folder.
 
-This resulted in the final intended repair (try2.patch)
+This resulted in the final intended repair (try2.patch) which was a huge success!

@@ -1,0 +1,17 @@
+#!/bin/bash
+
+assert-equal () {
+    diff -q <("${ANGELIX_RUN:-eval}" $1) <(echo -ne "$2") > /dev/null
+}
+
+case "$1" in
+    1)  
+        assert-equal "./test 4" '4\n'
+        ;;
+    2)  
+        assert-equal "./test -2" '-1\n'
+        ;;
+    3)  
+        assert-equal "./test 100" '-1\n'
+        ;;
+esac
