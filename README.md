@@ -12,7 +12,7 @@ I had several issues with trying to compile Angelix after building from source. 
 5. Run the Virtual Machine Manager application. You can import the `.qcow2` file into the KVM by following the steps [here](https://markontech.com/posts/convert-virtualbox-vms-to-qemu-kvm/#import-the-qcow2-into-the-kvm-vm).
 6. Log into user `angelix` with password `angelix`.
 
-The contents of this repository are only the test cases I made. You will need your own Angelix software to run these test cases.
+The contents of this repository are only the test cases I made. I also had trouble transferring files from QEMU/KVM to my host machine...so I had to handtype the files. You will need your own Angelix software to run these test cases.
 Make sure to make your executable with `make all` in `/src` before changing out of the directory and running the command specified in the README.md for the test.
 
 ## Purpose ##
