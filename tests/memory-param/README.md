@@ -1,6 +1,5 @@
 # memory-param
-To run this repair, execute this command in `tests\memory-param`:
-
+To run this repair, execute this command in `tests\memory-param`:\
 `angelix src test.c oracle 1 2 3 4 5 6 7 8 --assert assert.json --defect if-conditions --synthesis-level mixed-conditional`
 
 After the trying the memory-oob experiment, I wanted to get angelix to infer the size of the array as bounds. This meant I had to do something meaningful with the array size instead of leaving it static, and I decided to make it a variable length.
@@ -14,11 +13,11 @@ When I first was building my test cases, I knew I needed these:
 
 I only used one test case that was "passing AND success" (as in, it was within the bounds). This resulted in angelix generating repairs with the upper bound as a constant of that test case instead of a variable.
 
-FOr example, test case 1 creates an array of size 7 and accesses index 2. This passes the original program since 2 is non-negative, but it also follows the intended behavior of accessing an index within specified bounds (size = 7).
+For example, test case 1 creates an array of size 7 and accesses index 2. This passes the original program since 2 is non-negative, but it also follows the intended behavior of accessing an index within specified bounds (size = 7).
 
-Since I had no other test case satisfying these constraints, the repair program did what it was supposed to, with the information provided: "When x == 2, this test case passes." What ended up happening was the repair used 2 as it's repair case.
-Therefore, I had to create another "in-bounds" test case (#6) to have angelix infer the relationship between the array size and the index.
-You can see this in the image below.
+Since I had no other test case satisfying these constraints, the repair program did what it was supposed to, with the information provided: "When x == 2, this test case passes." What ended up happening was the repair used 2 as it's repair case.\
+Therefore, I had to create another "in-bounds" test case (#6) to have angelix infer the relationship between the array size and the index.\
+You can see this in the image below.\
 ![alt text](https://github.com/elztsang/angelix_findings/blob/main/tests/memory-param/constant_example.png)
 
 This resulted in the final intended repair (try2.patch) which was a huge success!
