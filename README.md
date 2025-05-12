@@ -16,6 +16,7 @@ The contents of this repository are only the test cases I made. You will need yo
 Make sure to make your executable with `make all` in `/src` before changing out of the directory and running the command specified in the README.md for the test.
 
 ## Purpose ##
-These experiemnts were to learn how angelix repair works and to see if we can eventually apply angelix's repair methodology to eBPF code. The high-level overview of is at `overview.png` in the repository.
+These experiemnts were to learn how angelix repair works. The ultimate goal is to see if we can eventually apply angelix's repair methodology to eBPF code. The hypothetical, high-level workflow is shown below.
+![alt text](https://github.com/elztsang/angelix_findings/blob/main/overview.png)
 
 The progression of experiments is memory-oob, memory-param, then struct-hdr. Each builds off of the previous experiment, so it would be the most helpful to follow in that order.
