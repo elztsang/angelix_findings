@@ -13,10 +13,10 @@ I had several issues with trying to compile Angelix after building from source. 
 6. Log into user `angelix` with password `angelix`.
 
 The contents of this repository are only the test cases I made. I also had trouble transferring files from QEMU/KVM to my host machine...so I had to handtype the files. You will need your own Angelix software to run these test cases.
-Make sure to make your executable with `make all` in `/src` before changing out of the directory and running the command specified in the README.md for the test.
+Make sure to build the experiment `test.c` executable with `make all` in `/src` before changing out of the directory, and then running the command specified in the README.md for the experiment.
 
 ## Purpose ##
-These experiemnts were to learn how angelix repair works. The ultimate goal is to see if we can eventually apply angelix's repair methodology to eBPF code. The hypothetical, high-level workflow is shown below.
+These experiments were to learn how angelix repair works. The ultimate goal is to see if we can eventually apply angelix's repair methodology to eBPF code. The hypothetical, high-level workflow is shown below.
 ![alt text](https://github.com/elztsang/angelix_findings/blob/main/overview.png)
 
 The progression of experiments is memory-oob, memory-param, then struct-hdr. Each builds off of the previous experiment, so it would be the most helpful to follow in that order.
