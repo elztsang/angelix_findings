@@ -1,5 +1,5 @@
 # Angelix Findings
-These are my experiments and findings using the [angelix](https://github.com/msv-lab/angelix) software.
+These are my experiments and findings using the [angelix](https://github.com/msv-lab/angelix) software as of spring 2025.
 You will find each of the experiments with their own README files detailing what they do and what I learned.
 
 ## Setup ##
