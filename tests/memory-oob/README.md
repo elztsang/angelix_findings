@@ -1,6 +1,5 @@
 # memory-oob
-To run this repair, execute this command in `tests\memory-oob`:
-
+To run this repair, execute this command in `tests\memory-oob`:\
 `angelix src test.c oracle 1 2 3 --assert assert.json --defect guards --synthesis-level extended-inequalities`
 
 This was a simple practice see if/how angelix can infer bounds.
