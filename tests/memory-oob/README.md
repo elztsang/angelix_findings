@@ -2,7 +2,7 @@
 To run this repair, execute this command in `tests\memory-oob`:
 `angelix src test.c oracle 1 2 3 --assert assert.json --defect guards --synthesis-level extended-inequalities`
 
-This was a simple practice see how angelix can infer bounds.
+This was a simple practice see if/how angelix can infer bounds.
 
 The intended behavior of the program is simple. If the input is within bounds of the static array (size 10), return the element at the specified index. Else, return -1 to indicate an invalid access.
 
