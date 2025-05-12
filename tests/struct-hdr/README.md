@@ -7,6 +7,7 @@ This experiment was an attempt to apply angelix to common packet length checks t
 ```c
 struct ethhdr *eth = data;
 uint64_t network_header_offset = sizeof(*eth);
+
 if (data + network_header_offset > data_end)
 {
   return RETURN_CODE;
