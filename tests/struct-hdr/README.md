@@ -1,6 +1,5 @@
 # struct-hdr
-To run this repair, execute this command in `tests\struct-hdr`:
-
+To run this repair, execute this command in `tests\struct-hdr`:\
 `angelix src test.c oracle 1 2 3 4 5 6 --assert assert.json --defect guards --synthesis-level conditional arithmetic --synthesis-ptr-vars --syntehsis-func-params`
 
 This experiment was an attempt to apply angelix to common packet length checks that are part of XDP programs. For example:
