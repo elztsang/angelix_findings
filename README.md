@@ -15,7 +15,9 @@ I had several issues with trying to compile Angelix after building from source. 
 ### Transferring files
 You can transfer the files from this repository to your VM with scp.\
 Run `scp -r . angelix@192.168.122.8:/home/angelix/angelix/tests/` from the root folder of this repository, if you want to import all of the tests.\
-If you just want one folder, run `scp -r angelix@192.168.122.8:/home/angelix/angelix/tests/[name_of_test] /[name_of_test]`
+If you just want a specific test, run `scp -r angelix@192.168.122.8:/home/angelix/angelix/tests/[name_of_test]`.
+
+Enter password "angelix" when prompted.
 
 I'm not sure if the angelix IP matches on every computer. You can find the angelix IP by going into the VM and entering `ifconfig` to the command line.\
 Look for the `indet addr:` field under `eth0`. Replace the angelix IP in the previous scp commands with the different one if needed.
