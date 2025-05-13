@@ -18,6 +18,6 @@ For example, test case 1 creates an array of size 7 and accesses index 2. This p
 Since I had no other test case satisfying these constraints, the repair program did what it was supposed to, with the information provided: "When x == 2, this test case passes." What ended up happening was the repair used 2 as it's repair case.\
 Therefore, I had to create another "in-bounds" test case (#6) to have angelix infer the relationship between the array size and the index.\
 You can see this in the image below.\
-![alt text](https://github.com/elztsang/angelix_findings/blob/main/tests/memory-param/constant_example.png)
+![alt text](https://github.com/elztsang/angelix_findings/blob/main/memory-param/constant_example.png)
 
 This resulted in the final intended repair (try2.patch) which was a huge success!
