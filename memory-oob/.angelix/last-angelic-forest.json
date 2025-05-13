@@ -1,0 +1,46 @@
+{
+  "1": [
+    [
+      {
+        "value": {
+          "value": true,
+          "name": "angelic"
+        },
+        "context": [
+          {
+            "value": 4,
+            "name": "x"
+          },
+          {
+            "value": -1,
+            "name": "y"
+          }
+        ],
+        "instId": 0,
+        "expression": "19-3-19-12"
+      }
+    ]
+  ],
+  "3": [
+    [
+      {
+        "value": {
+          "value": false,
+          "name": "angelic"
+        },
+        "context": [
+          {
+            "value": 100,
+            "name": "x"
+          },
+          {
+            "value": -1,
+            "name": "y"
+          }
+        ],
+        "instId": 0,
+        "expression": "19-3-19-12"
+      }
+    ]
+  ]
+}

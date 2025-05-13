@@ -1,0 +1,50 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdint.h>
+#ifndef ANGELIX_OUTPUT
+#define ANGELIX_OUTPUT(type, expr, id) expr
+#endif
+
+char str_array[7][11] = {
+        "okaydata",     //0 = good, 8
+        "isbaddata",    //1 = bad, 9
+        "seven77",      //2 = good, 7
+        "gooddata",     //3 = good, 8
+        "donotaccess",  //4 = bad, 11
+        "1",            //5 = good, 1
+        "four",         //6 = good, 4
+};
+
+
+struct eth {
+	int num1; //data, should be 0
+	int num2; //data_end, should be < 8
+};
+
+int get_data(int which, int *data_end){
+
+//	*data = 0;
+	return strlen(str_array[which]);
+}
+
+int main(int argc, char**argv) {
+	int which, x, struct_size;
+	which = atoi(argv[2]); //assume this is always <= 4
+	struct_size = sizeof(struct eth*);
+	x = -1;
+	int data, data_end;
+	data = argv[1];
+	data_end = 0; //initializing so that it can be used by angelix in repair
+	get_data(which, &data_end);
+
+	struct eth hdr;	//this is not memory allocated. not sure if i need to
+	hdr.num1 = data;
+	hdr.num2 = data_end;
+
+	//fix: if(data + sizeof(struct eth*) < data_end);
+		x = hdr.num2;	//good data
+	printf("%d\n", ANGELIX_OUTPUT(int, x, "stdout"));
+
+	return 0;
+}

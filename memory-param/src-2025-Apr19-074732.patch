@@ -1,0 +1,11 @@
+--- a/test.c
++++ b/test.c
+@@ -25,7 +25,7 @@
+ 	int arr[size];
+ 	init_array(arr, size);
+ 
+-	if(x >= 0)
++	if((size == 7))
+ 		y = arr[x];
+ 
+ 	printf("%d\n", ANGELIX_OUTPUT(int, y, "stdout"));

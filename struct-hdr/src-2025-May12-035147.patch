@@ -1,0 +1,11 @@
+--- a/test.c
++++ b/test.c
+@@ -47,7 +47,7 @@
+ 	hdr.num2 = data_end;
+ 	//fix: if(data + sizeof(struct eth*) < data_end);
+ //	if(data + sizeof(struct eth*) < data_end) printf("within bounds\n");
+-		x = hdr.num2;	//good data
++		if ((data_end >= struct_size)) x = hdr.num2;	//good data
+ 	printf("%d\n", ANGELIX_OUTPUT(int, x, "stdout"));
+ 
+ 	return 0;

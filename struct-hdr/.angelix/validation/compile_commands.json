@@ -1,0 +1,7 @@
+[
+  {
+    "directory": "/home/angelix/angelix/tests/struct-hdr/.angelix/validation/.",
+    "file": "/home/angelix/angelix/tests/struct-hdr/.angelix/validation/test.c",
+    "command": "cc -c -g -o test.o /home/angelix/angelix/tests/struct-hdr/.angelix/validation/test.c -I/home/angelix/angelix/build/include -include /home/angelix/angelix/src/runtime/runtime.h -D ANGELIX_INSTRUMENTATION"
+  }
+]

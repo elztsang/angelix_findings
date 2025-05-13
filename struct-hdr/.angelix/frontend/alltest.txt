@@ -1,0 +1,12 @@
+char str_array[10][11] = {
+        "1",            //0 = good, 1
+        "isbaddata",    //1 = bad, 9
+        "ii",           //2 = good, 2
+        "333",          //3 = good, 3
+        "donotaccess",  //4 = bad, 11
+        "four",         //5 = good, 4
+        "fives",        //6 = good, 5
+        "123456",       //7 = good, 6
+        "seven77",      //8 = good, 7 
+        "gooddata",     //9 = good, 8
+};

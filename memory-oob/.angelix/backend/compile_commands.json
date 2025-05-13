@@ -1,0 +1,7 @@
+[
+  {
+    "command": "cc -c -o test.o /home/angelix/angelix/tests/memory-oob/.angelix/backend/test.c -I/home/angelix/angelix/build/include -include /home/angelix/angelix/src/runtime/runtime.h -D ANGELIX_INSTRUMENTATION",
+    "file": "/home/angelix/angelix/tests/memory-oob/.angelix/backend/test.c",
+    "directory": "/home/angelix/angelix/tests/memory-oob/.angelix/backend/."
+  }
+]

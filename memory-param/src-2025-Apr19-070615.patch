@@ -1,0 +1,11 @@
+--- a/test.c
++++ b/test.c
+@@ -35,7 +35,7 @@
+ //	memset(arr, 1, sizeof(arr));
+ 
+ 	if(x >= 0)
+-		y = arr[x];
++		if ((5 > x)) y = arr[x];
+ 	printf("%d\n", ANGELIX_OUTPUT(int, y, "stdout"));
+ //	free(arr);
+ 	return 0;

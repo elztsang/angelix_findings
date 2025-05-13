@@ -1,0 +1,86 @@
+{
+  "3": [
+    [
+      {
+        "context": [
+          {
+            "name": "struct_size",
+            "value": 8
+          },
+          {
+            "name": "x",
+            "value": -1
+          },
+          {
+            "name": "argv",
+            "value": 37334432
+          },
+          {
+            "name": "data",
+            "value": 0
+          },
+          {
+            "name": "data_end",
+            "value": 7
+          },
+          {
+            "name": "argc",
+            "value": 2
+          },
+          {
+            "name": "which",
+            "value": 2
+          }
+        ],
+        "value": {
+          "name": "angelic",
+          "value": false
+        },
+        "instId": 0,
+        "expression": "50-3-50-11"
+      }
+    ]
+  ],
+  "1": [
+    [
+      {
+        "context": [
+          {
+            "name": "struct_size",
+            "value": 8
+          },
+          {
+            "name": "x",
+            "value": -1
+          },
+          {
+            "name": "argv",
+            "value": 57742816
+          },
+          {
+            "name": "data",
+            "value": 0
+          },
+          {
+            "name": "data_end",
+            "value": 8
+          },
+          {
+            "name": "argc",
+            "value": 2
+          },
+          {
+            "name": "which",
+            "value": 0
+          }
+        ],
+        "value": {
+          "name": "angelic",
+          "value": true
+        },
+        "instId": 0,
+        "expression": "50-3-50-11"
+      }
+    ]
+  ]
+}

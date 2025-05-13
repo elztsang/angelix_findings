@@ -1,0 +1,11 @@
+--- a/test.c
++++ b/test.c
+@@ -16,7 +16,7 @@
+ 	int x = atoi(argv[1]);
+ 	int y = -1;
+ 	if(x >= 0)
+-		y = arr[x];
++		if ((! (x >= 9))) y = arr[x];
+ 	printf("%d\n", ANGELIX_OUTPUT(int, y, "stdout"));
+ 	return 0;
+ }

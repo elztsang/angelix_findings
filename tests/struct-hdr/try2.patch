@@ -1,2 +1,0 @@
--   x = hdr.num2;   //good data
-+   if ((data_end >= struct_size)) x = hdr.num2;   //good data

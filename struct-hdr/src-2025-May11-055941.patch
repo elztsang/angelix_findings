@@ -1,0 +1,11 @@
+--- a/test.c
++++ b/test.c
+@@ -55,7 +55,7 @@
+ //	data_end = hdr.num2;
+ 
+ 	//fix: if(data + sizeof(struct eth*) < data_end);
+-		x = hdr.num2;	//good data
++		if ((! (data_end > 8))) x = hdr.num2;	//good data
+ 	printf("%d\n", ANGELIX_OUTPUT(int, x, "stdout"));
+ 
+ 	return 0;

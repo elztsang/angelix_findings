@@ -1,0 +1,21 @@
+klee -smtlib-human-readable -write-smt2s --libc=uclibc --posix-runtime -allow-external-sym-calls ./test.patched.bc 0
+PID: 2834
+Started: 2025-05-12 03:51:41
+BEGIN searcher description
+<InterleavedSearcher> containing 2 searchers:
+RandomPathSearcher
+WeightedRandomSearcher::CoveringNew
+</InterleavedSearcher>
+END searcher description
+Finished: 2025-05-12 03:51:43
+Elapsed: 00:00:02
+KLEE: done: explored paths = 2
+KLEE: done: avg. constructs per query = 13
+KLEE: done: total queries = 12
+KLEE: done: valid queries = 0
+KLEE: done: invalid queries = 12
+KLEE: done: query cex = 12
+
+KLEE: done: total instructions = 3182894
+KLEE: done: completed paths = 2
+KLEE: done: generated tests = 2
