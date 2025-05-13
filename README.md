@@ -12,13 +12,21 @@ I had several issues with trying to compile Angelix after building from source. 
 5. Run the Virtual Machine Manager application. You can import the `.qcow2` file into the KVM by following the steps [here](https://markontech.com/posts/convert-virtualbox-vms-to-qemu-kvm/#import-the-qcow2-into-the-kvm-vm).
 6. Log into user `angelix` with password `angelix`.
 
-## Things to Know ##
-The contents of this repository are only the test cases I made. I also had trouble transferring files from QEMU/KVM to my host machine...so I had to handtype the files. You will need your own Angelix software to run these test cases.\
+### Transferring files
+You can transfer the files from this repository to your VM with scp.\
+Run `scp -r . angelix@192.168.122.8:/home/angelix/angelix/tests/` from the root folder of this repository, if you want to import all of the tests.\
+If you just want one folder, run `scp -r angelix@192.168.122.8:/home/angelix/angelix/tests/[name_of_test] /[name_of_test]`
+
+I'm not sure if the angelix IP matches on every computer. You can find the angelix IP by going into the VM and entering `ifconfig` to the command line.\
+Look for the `indet addr:` field under `eth0`. Replace the angelix IP in the previous scp commands with the different one if needed.
+
+## Overview ##
+The contents of this repository are only the test cases I made. You will need your own Angelix software to run these test cases.\
 Make sure to build the experiment `test.c` executable with `make all` in `/src` before changing out of the directory, and then running the command specified in the README.md for the experiment.\
 The `oracle` files are the test cases, and the `assert.json` files tell angelix which of the test cases are failing for the initial program.
 
 ## Purpose ##
 These experiments were to learn how angelix repair works. The ultimate goal is to see if we can eventually apply angelix's repair methodology to eBPF code. The hypothetical, high-level workflow is shown below.\
-![alt text](https://github.com/elztsang/angelix_findings/blob/main/overview.png)\
+![alt text](https://github.com/elztsang/angelix_findings/blob/main/overview.png)
 
 The progression of experiments is memory-oob, memory-param, then struct-hdr. Each builds off of the previous experiment, so it would be the most helpful to follow in that order.
