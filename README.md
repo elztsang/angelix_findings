@@ -27,8 +27,12 @@ The contents of this repository are only the test cases I made. You will need yo
 Make sure to build the experiment `test.c` executable with `make all` in `/src` before changing out of the directory, and then running the command specified in the README.md for the experiment.\
 The `oracle` files are the test cases, and the `assert.json` files tell angelix which of the test cases are failing for the initial program.
 
+The progression of experiments is memory-oob, memory-param, then struct-hdr. Each builds off of the previous experiment, so it would be the most helpful to follow in that order.
+
 ## Purpose ##
 These experiments were to learn how angelix repair works. The ultimate goal is to see if we can eventually apply angelix's repair methodology to eBPF code. The hypothetical, high-level workflow is shown below.\
 ![alt text](https://github.com/elztsang/angelix_findings/blob/main/overview.png)
 
-The progression of experiments is memory-oob, memory-param, then struct-hdr. Each builds off of the previous experiment, so it would be the most helpful to follow in that order.
+The motivation for looking into angelix is to apply automatic program repair to eBPF code rejected by the eBPF verifier. As eBPF bytecode is hard to debug, we want to try to repair eBPF C code instead.
+
+Angelix depends on user-inputted test cases in order to infer correct behavior and generate intended repairs. As eBPF code is dealing with non-static data/packet streams, the goal is to be able to generate test cases after processing information from the resulting error log and generating test cases from there.
