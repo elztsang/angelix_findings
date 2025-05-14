@@ -4,8 +4,11 @@ To run this repair, execute this command in `tests\memory-param`:\
 
 After the trying the memory-oob experiment, I wanted to get angelix to infer the size of the array as bounds. This meant I had to do something meaningful with the array size instead of leaving it static, and I decided to make it a variable length.
 
+The program takes in the first input as the size of the array, and the second input as the index of the array access. It returns the item in that index if it's valid, and -1 if invalid.
+
 This experiment made me realize, again, the importance of choosing test cases and their effects on repair. While seemingly a simple repair, it took a lot of trial and error to get the program to understand the intended behavior of the program, which we need to provide with test cases.
 
+## Findings
 When I first was building my test cases, I knew I needed these:
 - array access less than 0
 - array access greater than the size of the array
@@ -24,3 +27,6 @@ This resulted in the final intended repair [here](https://github.com/elztsang/an
 
 ### notes
 I think I made more test cases than were "necessary" for a correct fix since I kept making additional tests in "hope" that the program would be repaired. It may be worth trying to design an efficient test suite standard to avoid this in the future. This could be beneficial for when we need to generate test cases based on eBPF verifer error logs.
+
+# Log
+![alt text](https://github.com/smartnic/angelix_findings/blob/main/memory-param/memory-param-log.png)
