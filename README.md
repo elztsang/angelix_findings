@@ -12,13 +12,14 @@ I had several issues with trying to compile Angelix after building from source. 
 5. Run the Virtual Machine Manager application. You can import the `.qcow2` file into the KVM by following the steps [here](https://markontech.com/posts/convert-virtualbox-vms-to-qemu-kvm/#import-the-qcow2-into-the-kvm-vm).
 6. Log into user `angelix` with password `angelix`.
 
-### Transferring files
-You can transfer the files from this repository to your VM with scp.\
-The angelix VM does not come with ssh pre-installed. In the angelix VM, run the command `sudo apt install openssh-server`.\
-If you want to import all of the tests, from the root folder of this repository on your HOST machine, run `scp -r . angelix@192.168.122.8:/home/angelix/angelix/tests/`.\
-If you just want a specific test, from the root folder of this repository on your HOST machine, run `scp -r angelix@192.168.122.8:/home/angelix/angelix/tests/[name_of_test] /[name_of_test]`.
+## Transferring files
+You can transfer the files from this repository to your VM with scp.
 
+The angelix VM does not come with ssh pre-installed. In the angelix VM, run the command `sudo apt install openssh-server`.\
 Enter password "angelix" when prompted.
+
+If you want to transfer all of the tests into the VM, from the root folder of this repository on your HOST machine, run `scp -r . angelix@192.168.122.8:/home/angelix/angelix/tests/`.\
+If you just want a specific test, from the root folder of this repository on your HOST machine, run `scp -r angelix@192.168.122.8:/home/angelix/angelix/tests/[name_of_test] /[name_of_test]`.
 
 I'm not sure if the angelix IP matches on every computer. You can find the angelix IP by going into the VM and entering `ifconfig` to the command line.\
 Look for the `indet addr:` field under `eth0`. Replace the angelix IP in the previous scp commands with the different one if needed.
