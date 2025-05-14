@@ -29,8 +29,8 @@ I realized that it is the *header size* that overshoots data_end, not the other 
 The results seem a step closer to being able to apply angelix to automate eBPF repairs such as bounds checking.
 
 ### notes
-Interestingly, I had to run the same command multiple times in order to generate a proper fix.
-Both of these logs were run from the same command, `angelix src test.c oracle 1 2 3 4 5 6 --assert assert.json --defect guards --synthesis-level conditional arithmetic --synthesis-ptr-vars --synthesis-func-params`
+Interestingly, I had to run the *exact same* command multiple times in order to generate a proper fix.
+Both of these logs were run from `angelix src test.c oracle 1 2 3 4 5 6 --assert assert.json --defect guards --synthesis-level conditional arithmetic --synthesis-ptr-vars --synthesis-func-params`
 Failure | Success
 --- | ---
 ![alt-text-1](https://github.com/smartnic/angelix_findings/blob/main/struct-hdr/struct-hdr-try1.png "Failure") | ![alt-text-2](https://github.com/smartnic/angelix_findings/blob/main/struct-hdr/struct-hdr-try2.png "Success")
