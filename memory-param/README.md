@@ -1,6 +1,6 @@
 # memory-param
 To run this repair, execute this command in `tests\memory-param`:\
-`angelix src test.c oracle 1 2 3 4 5 6 7 8 --assert assert.json --defect if-conditions --synthesis-level mixed-conditional`
+`angelix src test.c oracle 1 2 3 4 5 6 --assert assert.json --defect if-conditions --synthesis-level mixed-conditional`
 
 After the trying the memory-oob experiment, I wanted to get angelix to infer the size of the array as bounds. This meant I had to do something meaningful with the array size instead of leaving it static, and I decided to make it a variable length.
 
@@ -21,3 +21,6 @@ You can see this in the image below.\
 ![alt text](https://github.com/elztsang/angelix_findings/blob/main/memory-param/constant_example.png)
 
 This resulted in the final intended repair [here](https://github.com/elztsang/angelix_findings/blob/main/memory-param/src-2025-Apr19-074942.patch) which was a huge success!
+
+### notes
+I think I made more test cases than were "necessary" for a correct fix since I kept making additional tests in "hope" that the program would be repaired. It may be worth trying to design an efficient test suite standard to avoid this in the future. This could be beneficial for when we need to generate test cases based on eBPF verifer error logs.
