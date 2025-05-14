@@ -1,6 +1,6 @@
 # struct-hdr
 To run this repair, execute this command in `tests\struct-hdr`:\
-`angelix src test.c oracle 1 2 3 4 5 6 --assert assert.json --defect guards --synthesis-level conditional arithmetic --synthesis-ptr-vars --syntehsis-func-params`
+`angelix src test.c oracle 1 2 3 4 5 6 --assert assert.json --defect guards --synthesis-level conditional arithmetic --synthesis-ptr-vars --synthesis-func-params`
 
 This experiment was an attempt to apply angelix to common packet length checks that are part of XDP programs. For example:
 ```c
@@ -21,6 +21,12 @@ The user inputs an integer that corresponds to a string in the array. `data` is 
 While typical XDP code has assigns the struct with `data` as a pointer, I decided against it for now. This may be the reason that `data` was not used in the repair, since it is initialized as an int to 0.
 
  ## Findings
-Initially, the repairs were unsuccessful and only using constants for the repairs instead of variables. This is because I thought that if the *data* was too large, then *data_end* would overshoot the header. I realized that it is the *header size* that overshoots data_end, not the other way around. After that, I changed the intended output of cases with small inputs to pass instead of fail. This resulted in the fix using variables instead of constants!
+Initially, the repairs were unsuccessful and only using constants for the repairs instead of variables. This is because I thought that if the *data* was too large, then *data_end* would overshoot the header.\
+I considered making strings of every size: 1, 2, 3, ..., 8 (struct_size), 9, and so on. But, I remembered from the memory-oob experiment that this would probably still result in repairing with constants.\
+
+I realized that it is the *header size* that overshoots data_end, not the other way around. After that, I changed the intended output of cases with small inputs to pass instead of fail. This resulted in the fix using variables instead of constants!
 
 The results seem a step closer to being able to apply angelix to automate eBPF repairs such as bounds checking.
+
+### notes
+Interestingly, I had to run the same command multiple times in order to generate a proper fix. (will insert images here)
