@@ -14,8 +14,9 @@ I had several issues with trying to compile Angelix after building from source. 
 
 ### Transferring files
 You can transfer the files from this repository to your VM with scp.\
-If you want to import all of the tests, run `scp -r . angelix@192.168.122.8:/home/angelix/angelix/tests/` from the root folder of this repository.\
-If you just want a specific test, run `scp -r angelix@192.168.122.8:/home/angelix/angelix/tests/[name_of_test] /[name_of_test]`  from the root folder of this repository.
+The angelix VM does not come with ssh pre-installed. In the angelix VM, run the command `sudo apt install openssh-server`.\
+If you want to import all of the tests, from the root folder of this repository on your HOST machine, run `scp -r . angelix@192.168.122.8:/home/angelix/angelix/tests/`.\
+If you just want a specific test, from the root folder of this repository on your HOST machine, run `scp -r angelix@192.168.122.8:/home/angelix/angelix/tests/[name_of_test] /[name_of_test]`.
 
 Enter password "angelix" when prompted.
 
