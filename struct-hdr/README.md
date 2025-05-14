@@ -20,4 +20,7 @@ The user inputs an integer that corresponds to a string in the array. `data` is 
 
 While typical XDP code has assigns the struct with `data` as a pointer, I decided against it for now. This may be the reason that `data` was not used in the repair, since it is initialized as an int to 0.
 
-However, the results seem a step closer to being able to apply angelix to automate eBPF repairs such as bounds checking.
+ ## Findings
+Initially, the repairs were unsuccessful and only using constants for the repairs instead of variables. This is because I thought that if the *data* was too large, then *data_end* would overshoot the header. I realized that it is the *header size* that overshoots data_end, not the other way around. After that, I changed the intended output of cases with small inputs to pass instead of fail. This resulted in the fix using variables instead of constants!
+
+The results seem a step closer to being able to apply angelix to automate eBPF repairs such as bounds checking.
