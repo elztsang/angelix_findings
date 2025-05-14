@@ -33,4 +33,6 @@ Interestingly, I had to run the same command multiple times in order to generate
 Both of these logs were run from the same command, `angelix src test.c oracle 1 2 3 4 5 6 --assert assert.json --defect guards --synthesis-level conditional arithmetic --synthesis-ptr-vars --synthesis-func-params`
 Failure | Success
 --- | ---
-![alt-text-1](https://github.com/smartnic/angelix_findings/blob/main/struct-hdr/struct-hdr-try1.png "Failure") ![alt-text-2](https://github.com/smartnic/angelix_findings/blob/main/struct-hdr/struct-hdr-try2.png "Success")
+![alt-text-1](https://github.com/smartnic/angelix_findings/blob/main/struct-hdr/struct-hdr-try1.png "Failure") | ![alt-text-2](https://github.com/smartnic/angelix_findings/blob/main/struct-hdr/struct-hdr-try2.png "Success")
+
+This may affect our repair process when we eventually attempt repairing eBPF code. Unless, we find a way to avoid this?
